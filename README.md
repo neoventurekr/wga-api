@@ -1,3 +1,24 @@
+<!-- TOC -->
+
+* [WGA API](#wga-api)
+* [개발 서버 정보](#개발-서버-정보)
+    * [URL](#url)
+    * [API Key](#api-key)
+* [API 목록](#api-목록)
+    * [Register Verification Event API](#register-verification-event-api)
+        * [Authentication](#authentication)
+        * [Request Body](#request-body)
+        * [Fields](#fields)
+        * [property Object](#property-object)
+            * [mission](#mission)
+            * [social](#social)
+            * [game](#game)
+            * [asset](#asset)
+            * [device](#device)
+        * [Responses](#responses)
+
+<!-- TOC -->
+
 # WGA API
 
 # 개발 서버 정보
@@ -68,8 +89,8 @@ https://dev-api.wga.xyz/
 | country                  | string          | ❌        | 국가 코드 (ISO 3166-1 alpha-2) <br/>예: KR, US |
 | property                 | object          | ❌        | 행동별 상세 메타데이터                              |
 
-| Enum             | Value                |
-|----------------------|----------------------|
+| Enum                  | Value                |
+|-----------------------|----------------------|
 | VerificationEventType | SOCIAL: 소셜, GAME: 게임 |
 
 | Enum                     | Value                            |
@@ -108,13 +129,13 @@ property 는 선택이며, 행동 타입에 맞는 상세 정보를 담습니다
 
 #### mission
 
-| Field       | Type            | Description    |
-|-----------------|-----------------|----------------|
-| missionId       | string          | 미션 ID          |
-| rewards         | string          | 보상 정보 (문자열 형태) |
+| Field            | Type            | Description    |
+|------------------|-----------------|----------------|
+| missionId        | string          | 미션 ID          |
+| rewards          | string          | 보상 정보 (문자열 형태) |
 | expiredTimestamp | ISO-8601 string | 만료 시각          |
-| detail          | string          | 상세 정보          |
-| failedReasons   | string          | 실패 사유          |
+| detail           | string          | 상세 정보          |
+| failedReasons    | string          | 실패 사유          |
 
 ```json
 {
@@ -130,13 +151,13 @@ property 는 선택이며, 행동 타입에 맞는 상세 정보를 담습니다
 
 #### social
 
-| Field      | Type   | Description          |
-|----------------|--------|----------------------|
-| contentId      | string | 컨텐츠 ID               |
-| contentType    | enum   | 컨텐츠 타입               |
+| Field           | Type   | Description          |
+|-----------------|--------|----------------------|
+| contentId       | string | 컨텐츠 ID               |
+| contentType     | enum   | 컨텐츠 타입               |
 | parentContentId | string | 부모 컨텐츠 ID (답글/대댓글 등) |
-| textLength     | number | 텍스트 길이               |
-| mediaCount     | number | 미디어 첨부 수             |      
+| textLength      | number | 텍스트 길이               |
+| mediaCount      | number | 미디어 첨부 수             |      
 
 | Enum        | Value                             |
 |-------------|-----------------------------------|
@@ -156,14 +177,14 @@ property 는 선택이며, 행동 타입에 맞는 상세 정보를 담습니다
 
 #### game
 
-| Field      | Type    | Description |
-|----------------|---------|-------------|
+| Field           | Type    | Description |
+|-----------------|---------|-------------|
 | playDurationSec | number  | 플레이 타임 (초)  |
-| success        | boolean | 성공 여부       |
-| score          | number  | 점수          |
+| success         | boolean | 성공 여부       |
+| score           | number  | 점수          |
 
 ```json
-      {
+{
   "game": {
     "playDurationSec": 340,
     "success": true,
@@ -174,13 +195,13 @@ property 는 선택이며, 행동 타입에 맞는 상세 정보를 담습니다
 
 #### asset
 
-| Field | Type          | Description    |
-|-----------|---------------|----------------|
-| type      | enum          | 자산 타입          |
-| name      | string        | 자산 이름          |
-| amount    | string/number | 수량 (정밀도 고려 권장) |
+| Field      | Type          | Description    |
+|------------|---------------|----------------|
+| type       | enum          | 자산 타입          |
+| name       | string        | 자산 이름          |
+| amount     | string/number | 수량 (정밀도 고려 권장) |
 | actionType | enum          | 변동 유형          |
-| isCash    | boolean       | 유료 재화 여부       |
+| isCash     | boolean       | 유료 재화 여부       |
 
 | Enum       | Value                                                                 |
 |------------|-----------------------------------------------------------------------|
@@ -200,10 +221,10 @@ property 는 선택이며, 행동 타입에 맞는 상세 정보를 담습니다
 
 #### device
 
-| Field  | Type   | Description |
-|------------|--------|-------------|
-| os         | string | 운영체제        |
-| osVersion  | string | OS 버전       |
+| Field       | Type   | Description |
+|-------------|--------|-------------|
+| os          | string | 운영체제        |
+| osVersion   | string | OS 버전       |
 | deviceModel | string | 디바이스 모델     |
 | networkType | enum   | 네트워크 타입     |
 
