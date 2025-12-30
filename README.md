@@ -29,7 +29,7 @@ https://dev-api.wga.xyz/
 
 ## API Key
 
-요청 시 X-API-KEY 헤더에 API Key 값을 전달해주시면 됩니다.
+요청 시 `X-WGA-API-Key` 헤더에 API Key 값을 전달해주시면 됩니다.
 
 # API 목록
 
