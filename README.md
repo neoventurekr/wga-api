@@ -52,7 +52,7 @@ https://dev-api.wga.xyz/
   "verificationEventType": "SOCIAL",
   "verificationPlatformType": "MOBILE",
   "verificationActionType": "POST_CREATE",
-  "clientTimestamp": 1764120027,
+  "clientTimestamp": "2025-12-09T04:12:34Z",
   "clientUserId": "user_12345",
   "ip": "203.0.113.10",
   "userAgent": "Mozilla/5.0 ...",
@@ -82,7 +82,7 @@ https://dev-api.wga.xyz/
 | verificationEventType    | enum            | ✅        | 이벤트 도메인 유형                                |
 | verificationPlatformType | enum            | ✅        | 발생 플랫폼                                    |
 | verificationActionType   | enum            | ✅        | 유저 행동 타입                                  |
-| clientTimestamp          | number          | ✅        | 클라이언트 기준 발생 시각 (Unix Epoch Time)                 |
+| clientTimestamp          | ISO-8601 string | ✅        | 클라이언트 기준 발생 시각 (Instant)                  |
 | clientUserId             | string          | ✅        | 파트너 서비스의 유저 식별자                           |
 | ip                       | string          | ❌        | 클라이언트 IP                                  |
 | userAgent                | string          | ❌        | User-Agent                                |
