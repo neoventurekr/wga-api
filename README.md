@@ -25,7 +25,11 @@
 
 ## URL
 
-https://dev-api.wga.xyz/
+### 운영 서버
+`https://api.wga.xyz/`
+
+### 개발 서버
+`https://dev-api.wga.xyz/`
 
 ## API Key
 
